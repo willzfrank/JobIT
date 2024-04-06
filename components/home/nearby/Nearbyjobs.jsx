@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
 import {
   View,
   Text,
@@ -53,7 +53,9 @@ const Nearbyjobs = () => {
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Nearby jobs</Text>
         <TouchableOpacity>
-          <Text style={styles.headerBtn}>Show all</Text>
+          <Link href="/Nearby">
+            <Text style={styles.headerBtn}>Show all</Text>
+          </Link>
         </TouchableOpacity>
       </View>
 

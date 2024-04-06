@@ -4,8 +4,8 @@
     "web": {
       "bundler": "metro"
     },
-    "name": "jobsift",
-    "slug": "jobsift",
+    "name": "JobsIT",
+    "slug": "JobsIT",
     "plugins": [
       "expo-router",
       [
@@ -20,4 +20,3 @@
     "policy": "sdkVersion"
   }
 }
-

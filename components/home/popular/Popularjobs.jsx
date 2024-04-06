@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useRouter } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
 import {
   View,
   Text,
@@ -15,10 +15,10 @@ import PopularJobCard from '../../common/cards/popular/PopularJobCard';
 import useFetch from '../../../hook/useFetch';
 import { dummyJob } from '../../../utils/data';
 
-const Popularjobs = () => {
+const Popularjobs = ({ searchTerm }) => {
   const router = useRouter();
   const { data, isLoading, error } = useFetch('search', {
-    query: 'Lagos',
+    query: `${searchTerm}`,
     num_pages: '1',
   });
 
@@ -34,7 +34,9 @@ const Popularjobs = () => {
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Popular jobs</Text>
         <TouchableOpacity>
-          <Text style={styles.headerBtn}>Show all</Text>
+          <Link href="/Popular">
+            <Text style={styles.headerBtn}>Show all</Text>
+          </Link>
         </TouchableOpacity>
       </View>
 
