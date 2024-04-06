@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   FlatList,
   ActivityIndicator,
-  Alert,
 } from 'react-native';
 
 import styles from './popularjobs.style';
@@ -17,7 +16,7 @@ import useFetch from '../../../hook/useFetch';
 const Popularjobs = ({ searchTerm }) => {
   const router = useRouter();
   const { data, isLoading, error } = useFetch('search', {
-    query: `${searchTerm}`,
+    query: 'developer',
     num_pages: '1',
   });
 

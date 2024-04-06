@@ -5,9 +5,7 @@ import {
   Text,
   TouchableOpacity,
   ActivityIndicator,
-  Alert,
   FlatList,
-  VirtualizedList,
 } from 'react-native';
 import * as Location from 'expo-location';
 
@@ -22,7 +20,7 @@ const Nearbyjobs = () => {
   const [errorMsg, setErrorMsg] = useState(null);
   const { data, isLoading, error } = useFetch('search', {
     query: `${address}`,
-    num_pages: '100',
+    num_pages: '1',
   });
 
   useEffect(() => {
@@ -65,17 +63,10 @@ const Nearbyjobs = () => {
         ) : error ? (
           <Text>Something went wrong</Text>
         ) : (
-          <VirtualizedList
+          <FlatList
             data={data}
             renderItem={renderJobCard}
             keyExtractor={(item) => `${item.job_id}`}
-            getItemCount={() => data.length}
-            getItem={(data, index) => data[index]}
-            getItemLayout={(data, index) => ({
-              length: 120,
-              offset: 120 * index,
-              index,
-            })}
           />
         )}
       </View>

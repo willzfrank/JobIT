@@ -48,7 +48,8 @@ const Nearby = () => {
         method: 'GET',
         url: `https://jsearch.p.rapidapi.com/search`,
         headers: {
-          'X-RapidAPI-Key': rapidApiKey,
+          'X-RapidAPI-Key':
+            '85311f399bmsh9f78c17e62abfb0p1890e6jsn10fa861f8cb9',
           'X-RapidAPI-Host': 'jsearch.p.rapidapi.com',
         },
         params: {
